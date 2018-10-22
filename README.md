@@ -38,4 +38,4 @@ None.
 GNU GPLv3
 
 ## Author Information
-his role was created in 2018 by [Bastian Bukatz](https://bassinator.github.io).
+This role was created in 2018 by [Bastian Bukatz](https://bassinator.github.io).
