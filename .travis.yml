@@ -4,11 +4,11 @@ env:
   matrix:
     - distro: centos7
       init: /usr/lib/systemd/systemd
-      run_opts: "--privileged --volume =/ sys/ fs/ cgroup:/ sys/ fs/ cgroup:r\ o"
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
       incron_service: incrond
     - distro: debian8
       init: /lib/systemd/systemd
-      run_opts: "--privileged --volume =/ sys/ fs/ cgroup:/ sys/ fs/ cgroup:r\ o"
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
       incron_service: incron
 
 before_install:
