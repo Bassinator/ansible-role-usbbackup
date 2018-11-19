@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: usbbackup
-  author: Bastian Bukatz
+  author: Bassinator
   description: simple role to automatically backup a specific to an usb stick automatically on insertion.
 
   license: GNU GPLv3
