@@ -11,4 +11,16 @@
       name: '{{ installation_os_user }}'
       group: '{{ installation_os_group }}'
   roles:
-    - role: bassinator.usbbackup
+    - { role: bassinator.usbbackup, usbdrive_unit: 'mnt-usbbackup', mount_point: '/mnt/usbbackup'}
+
+  post_tasks:
+    - name: create testfiles to be backuped
+      file:
+        path: '/home/{{ installation_os_user }}/testfile'
+        state: touch
+        modification_time: "preserve"
+        access_time: "preserve"
+    - name: test usbbackup
+      script: test.sh
+      args:
+        creates: '/mnt/usbbackup/ttt'
