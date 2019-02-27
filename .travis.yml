@@ -5,23 +5,23 @@ services: docker
 env:
   global:
     - ROLE_NAME: usbbackup
-    matrix:
-      - MOLECULE_DISTRO: centos7
-      - MOLECULE_DISTRO: debian8
+  matrix:
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: debian8
 
-  install:
-    # Install test dependencies.
-    - pip install molecule docker
+install:
+  # Install test dependencies.
+  - pip install molecule docker
 
-  before_script:
-    # Use actual Ansible Galaxy role name for the project directory.
-    - cd ../
-    - mv ansible-role-$ROLE_NAME bassinator.$ROLE_NAME
-    - cd bassinator.$ROLE_NAME
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role-$ROLE_NAME bassinator.$ROLE_NAME
+  - cd bassinator.$ROLE_NAME
 
-  script:
-    # Run tests.
-    - molecule test
+script:
+  # Run tests.
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
