@@ -1,3 +1,4 @@
+---
 - name: install autobackup script
   copy:
     src: home_backup.sh
@@ -7,7 +8,7 @@
 - name: create excludelist
   lineinfile:
     path: '{{ backup_source }}/.excludelist'
-    create: yes
+    create: true
     line: '{{ backup_source }}/{{ item }}'
     owner: '{{ installation_os_user }}'
     group: '{{ installation_os_group }}'
