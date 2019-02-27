@@ -10,6 +10,13 @@
     user:
       name: '{{ installation_os_user }}'
       group: '{{ installation_os_group }}'
+
+  - include_tasks: redhat.yml
+    when: ansible_os_family == "RedHat"
+
+  - include_tasks: debian.yml
+    when: ansible_os_family == "Debian"
+
   roles:
     - { role: bassinator.usbbackup, usbdrive_unit: 'mnt-usbbackup', mount_point: '/mnt/usbbackup'}
 

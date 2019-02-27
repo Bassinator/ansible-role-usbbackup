@@ -1,0 +1,6 @@
+---
+- name: install dosfstools
+  apt:
+    name: dosfstools
+    state: present
+    force_apt_get: true
