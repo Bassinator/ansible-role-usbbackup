@@ -4,3 +4,4 @@
     name: dosfstools
     state: present
     force_apt_get: true
+    update_cache: true
