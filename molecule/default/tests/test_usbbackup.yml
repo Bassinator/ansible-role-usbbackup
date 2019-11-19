@@ -1,0 +1,5 @@
+---
+command:
+  check:
+    exec: ls -l /mnt/usbbackup/instance_*.tar.gz
+    exit-status: 0
